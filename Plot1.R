@@ -1,4 +1,3 @@
-## This is the command for loading the file
 housedat <- read.table("household_power_consumption.txt",header = T, sep = ";",na.string = "?")
 names(housedat) <- c("date","time","active","Reactive","voltage","intensity","SM1","SM2","SM3")
 housedat$date <- as.Date(housedat$date,format = "%d/%m/%Y")
