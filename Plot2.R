@@ -8,7 +8,10 @@ housedat$date <- as.Date(housedat$date,format = "%d/%m/%Y")
 seldata <- housedat[housedat$date >= "2007-02-01" & housedat$date <= "2007-02-02",]
 ## convert the dates into week days
 seldata$date <- weekdays(as.Date(seldata$date,"%d/%m/%Y"))
+##seldata$time <- strptime(seldata$time,"%a")
 
 ## Plot the data
 
 with(seldata,plot(time,active))
+dev.copy(png,file = "plot2.png")
+dev.off()
